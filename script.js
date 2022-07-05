@@ -29,7 +29,14 @@ inputs.forEach(element => {
                         if(!validateEmail(inputValue)) {
                             errors[inputName].push('Neispravna Email adresa');
                         } 
-                        break;
+                    break;
+
+                    case 'ponovi_lozinku':
+                        let lozinka = document.querySelector('input[name="lozinka"]').value;
+                        if(inputValue !== lozinka) {
+                            errors[inputName].push('Lozinke se ne poklapaju');
+                        }
+                    break;
             }
 
         } else {
