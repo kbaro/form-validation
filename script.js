@@ -26,14 +26,13 @@ inputs.forEach(element => {
                     break;
 
                     case 'email':
-                        if(validateEmail(inputValue)) {
-                            console.log('dobro');
-                        } else {
-                            console.log('nije dobro');
-                        }
+                        if(!validateEmail(inputValue)) {
+                            errors[inputName].push('Neispravna Email adresa');
+                        } 
+                        break;
             }
 
-        }else {
+        } else {
             errors[inputName] = ['Polje ne može imati manje od 5 znakova'];
         }
             populateErrors();
